@@ -1,0 +1,25 @@
+# Agora Forum — example Nginx server block.
+# Nginx ignores .htaccess files, so these rules do the same job.
+
+server {
+    listen 80;
+    server_name forum.example.com;
+    root /var/www/agora;
+    index index.php;
+
+    # Private folders and hidden files
+    location ~ ^/(app|data|templates|docs)(/|$) { deny all; return 404; }
+    location ~ /\.(?!well-known/) { deny all; return 404; }
+    location ~ \.(sqlite|sqlite-journal|sqlite-wal|sqlite-shm|tmp)$ { deny all; return 404; }
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param AGORA_REWRITE 1;   # clean URLs are enabled above
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    }
+}

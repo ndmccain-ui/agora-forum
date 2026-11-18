@@ -1,0 +1,32 @@
+/* Agora theme
+   Name: Slate
+   Author: Agora Forum
+   Description: Cool grays with a calm blue accent and square-ish corners.
+*/
+
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --surface-2: #eaeef3;
+  --text: #1c2430;
+  --text-muted: #5d6878;
+  --border: #d8dee7;
+  --accent: #2f5fb3;
+  --accent-hover: #244c92;
+  --accent-text: #ffffff;
+  --accent-soft: #e3ebf8;
+  --radius: 6px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12161c;
+  --surface: #1a2029;
+  --surface-2: #232b36;
+  --text: #e6ebf2;
+  --text-muted: #9aa6b6;
+  --border: #2e3846;
+  --accent: #7ea6ef;
+  --accent-hover: #9dbcf4;
+  --accent-text: #0d1522;
+  --accent-soft: #1f2d45;
+}

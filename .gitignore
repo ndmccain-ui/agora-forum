@@ -1,0 +1,7 @@
+# Forum data created by the installer — never commit
+/data/*
+!/data/.htaccess
+!/data/index.php
+
+# Personal planning notes
+/PLAN.md

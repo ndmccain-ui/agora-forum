@@ -1,0 +1,41 @@
+/* Agora theme
+   Name: Botanical
+   Author: Pip & Pixel
+   Description: Sage greens, cream paper and a terracotta accent, with serif headings.
+*/
+
+:root {
+  --bg: #f4f6f4;
+  --surface: #ffffff;
+  --surface-2: #eaefea;
+  --text: #23302b;
+  --text-muted: #52635c;
+  --border: #c5d1c7;
+  --accent: #a6573b;
+  --accent-hover: #8a4630;
+  --accent-text: #ffffff;
+  --accent-soft: #fbf2ed;
+
+  --font: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Lora", Georgia, "Times New Roman", serif;
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(35, 48, 43, .06);
+}
+
+:root[data-theme="dark"] {
+  --bg: #141b17;
+  --surface: #1c2520;
+  --surface-2: #243029;
+  --text: #e4ebe6;
+  --text-muted: #9fb0a6;
+  --border: #33433a;
+  --accent: #d48162;
+  --accent-hover: #e29a7e;
+  --accent-text: #1a110c;
+  --accent-soft: #3a2b24;
+  --shadow: none;
+}
+
+/* A touch of sage on the header */
+.site-header { border-bottom-width: 2px; }
+.site-name { font-family: var(--font-heading); letter-spacing: .01em; }

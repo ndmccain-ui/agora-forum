@@ -1,0 +1,3 @@
+# Keep Unix line endings in the repository and in downloads
+* text=auto eol=lf
+*.svg text eol=lf

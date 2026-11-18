@@ -1,0 +1,47 @@
+/* Agora theme
+   Name: Agora
+   Author: Agora Forum
+   Description: The default look — warm paper and terracotta.
+*/
+
+/*
+   MAKING YOUR OWN THEME
+   ---------------------
+   1. Copy this file and give it a new name, e.g. "my-theme.css" (lowercase, dashes).
+   2. Change the Name/Author/Description above.
+   3. Change the colors below. The first block is light mode, the second dark mode.
+   4. Upload it in Admin → Appearance (or put it in the themes/ folder).
+
+   You can also add any other CSS at the end of the file.
+   See docs/THEMES.md for every variable you can change.
+*/
+
+:root {
+  --bg: #f7f5f2;          /* page background */
+  --surface: #ffffff;     /* cards, header, posts */
+  --surface-2: #f0ece6;   /* subtle fills (hover, code) */
+  --text: #22201d;        /* main text */
+  --text-muted: #6b655d;  /* dates, hints */
+  --border: #e2ddd5;      /* lines around cards */
+  --accent: #b5532c;      /* buttons, links */
+  --accent-hover: #9a4422;
+  --accent-text: #ffffff; /* text on accent buttons */
+  --accent-soft: #fdf5f1; /* light accent fills (badges, selected) */
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font);
+  --radius: 10px;         /* how rounded corners are */
+}
+
+:root[data-theme="dark"] {
+  --bg: #171614;
+  --surface: #211f1c;
+  --surface-2: #2a2824;
+  --text: #ece8e2;
+  --text-muted: #a39c92;
+  --border: #36332e;
+  --accent: #e8875f;
+  --accent-hover: #f09d79;
+  --accent-text: #1b120d;
+  --accent-soft: #3a2a22;
+}
