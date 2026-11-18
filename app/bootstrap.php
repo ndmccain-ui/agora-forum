@@ -2,7 +2,7 @@
 declare(strict_types=1);
 defined('AGORA') or exit;
 
-const AGORA_VERSION = '0.9.0';
+const AGORA_VERSION = '1.0.0';
 define('AGORA_DATA', AGORA_ROOT . '/data');
 define('AGORA_DEBUG', PHP_SAPI === 'cli-server' || getenv('AGORA_DEBUG') === '1');
 

@@ -45,6 +45,37 @@ Click **Create my forum** and you're done.
 
 Nginx doesn't read `.htaccess` files. Add the rules from [`nginx.conf.example`](nginx.conf.example) to your server block. They protect the private folders and turn on clean addresses.
 
+## Your own server (VPS) with Apache
+
+On Ubuntu or Debian with Apache installed the usual way:
+
+1. Turn on clean addresses: `sudo a2enmod rewrite`
+2. Install PHP's extras: `sudo apt install libapache2-mod-php php-sqlite3 php-mbstring php-gd`
+3. In your site's Apache config, allow `.htaccess` for the forum folder:
+
+   ```apache
+   <Directory /var/www/forum>
+       AllowOverride All
+   </Directory>
+   ```
+
+4. Let Apache write to `data`: `sudo chown -R www-data:www-data /var/www/forum/data`
+5. Restart Apache: `sudo systemctl restart apache2`
+
+If `a2enmod` says "command not found", Apache was probably installed by a control panel (see aaPanel below), so manage it there instead.
+
+## aaPanel
+
+aaPanel runs its own Apache, so you do everything in its dashboard.
+
+1. **Website → Add site**: enter your domain and pick **PHP 8.1 or newer**. No database is needed.
+2. **Files**: open the site folder (usually `/www/wwwroot/your-domain`), upload the Agora ZIP and **Unzip** it. Move everything from the `agora-forum-main` folder up into the site folder, so `index.php` is directly inside it. Delete aaPanel's placeholder `index.html`.
+3. Right-click the `data` folder → **Permission**: **755**, owner **www**.
+4. **Website → your site → SSL**: get a Let's Encrypt certificate and turn on **Force HTTPS**.
+5. Visit your forum and run setup.
+
+Leave the site's **URL rewrite** setting empty: Agora's `.htaccess` takes care of it. If setup ever reports a "disabled function", remove that function from **App Store → PHP → Setting → Disabled functions**.
+
 ## Troubleshooting
 
 **"Something went wrong" or a blank page.** Check your host's PHP error log. The most common cause is a PHP version older than 8.1: choose a newer one in your control panel ("PHP Selector" or "MultiPHP Manager").

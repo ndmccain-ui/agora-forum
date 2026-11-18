@@ -6,7 +6,7 @@ A simple, open-source discussion forum you can install by uploading a folder.
 - **One file to back up.** Everything lives in a single SQLite database.
 - **Small and calm.** Fast pages that work without JavaScript, on phones and computers, in light and dark mode.
 
-> **Status: 0.9 (release candidate).** Feature-complete for version 1. Please try it and [report problems](../../issues).
+> **Version 1.0.** Found a problem or have an idea? [Open an issue](../../issues).
 
 ## Features
 

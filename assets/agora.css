@@ -256,7 +256,8 @@ h2 { font-size: 1.15rem; }
 .field { margin-bottom: 16px; }
 .field label { display: block; font-weight: 600; margin-bottom: 4px; }
 .field__hint { margin: 0 0 6px; color: var(--text-muted); font-size: .875rem; }
-.field input, .field textarea, .field select {
+/* Text-style boxes only — radio buttons, checkboxes and color pickers keep their own size */
+.field input:not([type="radio"]):not([type="checkbox"]):not([type="color"]), .field textarea, .field select {
   width: 100%; min-height: 42px; padding: 8px 12px;
   border: 1px solid var(--border); border-radius: 8px;
   background: var(--bg); color: var(--text); font: inherit;
@@ -469,7 +470,10 @@ a.badge--new:hover { text-decoration: none; background: var(--accent-hover); }
 .radio-group { border: 0; padding: 0; display: grid; gap: 8px; }
 .radio-group legend { font-weight: 600; margin-bottom: 6px; padding: 0; }
 .radio-group label { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; cursor: pointer; }
-.radio-group input { margin-top: 4px; accent-color: var(--accent); }
+.radio-group input, .color-input input[type="checkbox"] {
+  flex: none; width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--accent);
+}
+.color-input input[type="checkbox"] { margin: 0; }
 .radio-group--inline { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px; }
 .radio-group--inline legend { width: 100%; }
 
